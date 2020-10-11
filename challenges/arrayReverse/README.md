@@ -8,4 +8,4 @@ Write a function called reverseArray which takes an array as an argument. Withou
 Since I need to write function without utilizing any of the built-in methods available to your language, I directilry tought about using loop and start from the length of the array and it keep decressing and assign the new array from 0 to array length.
 
 ## Solution
-!(whiteboard)[../../assets/reverseArray.png]
+![(]whiteboard](../../assets/reverseArray.png)
