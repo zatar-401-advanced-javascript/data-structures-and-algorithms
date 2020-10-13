@@ -15,7 +15,7 @@ describe('Array Shift',() =>{
 
     expect(arrayShift.insertShiftArray(obj.arr,obj.val)).toEqual([4,8,15,16,23,42]);
   });
-  it('Invalid arguments',() =>{
+  it('Invalid parameters',() =>{
     arrayShift.insertShiftArray('aaa','e');
     expect(console.log).toHaveBeenCalled();
   });

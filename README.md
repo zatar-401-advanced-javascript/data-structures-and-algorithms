@@ -5,4 +5,5 @@
 \# | Challenge 
 --- | ---
 1 | [Reverse an array](https://github.com/zatar-401-advanced-javascript/data-structures-and-algorithms/blob/main/challenges/arrayReverse/)
-2 | [array-shift](https://github.com/zatar-401-advanced-javascript/data-structures-and-algorithms/blob/main/challenges/arrayShift/)
+2 | [Shift an Array](https://github.com/zatar-401-advanced-javascript/data-structures-and-algorithms/blob/main/challenges/arrayShift/)
+3 | [Array Binary Search](https://github.com/zatar-401-advanced-javascript/data-structures-and-algorithms/blob/main/challenges/arrayBinarySearch/)

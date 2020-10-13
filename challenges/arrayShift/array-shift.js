@@ -14,7 +14,7 @@ class ArrayShift {
       }
       return newArr;
     }else{
-      console.log('Invalid arguments | function(arr,val) replace arr with array and val with number');
+      console.log('Invalid parameters | function(arr,val) replace arr with array and val with number');
     }
   }
 }
