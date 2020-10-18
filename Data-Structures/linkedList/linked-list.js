@@ -67,19 +67,19 @@ class LinkedList {
 
   append(value){
     const node = new Node(value);
+
     if (!this.head) {
       this.head = node;
       return this;
     }
     let currentNode = this.head;
-
     
-
     while (currentNode.pointer) {
       currentNode = currentNode.pointer;
     }
+
     currentNode.pointer = node;
-    
+    console.log('--------------');
     return this;
   }
 
@@ -134,9 +134,13 @@ class LinkedList {
 module.exports = LinkedList;
 const ll = new LinkedList();
 ll.insert(1);
-ll.insert(2);
-ll.insert(3);
-ll.insertBefore(1,99);
-ll.insertAfter(55,88);
+ll.append(2);
+ll.append(3);
+ll.append(4);
+// ll.append(4);
+// ll.append(6);
+// ll.append(7);
+// ll.insertBefore(1,99);
+ll.insertAfter(2,99);
 console.log(ll.toString());
 
