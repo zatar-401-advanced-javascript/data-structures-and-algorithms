@@ -64,12 +64,79 @@ class LinkedList {
     msg = msg.concat(`NULL`);
     return msg;
   }
+
+  append(value){
+    const node = new Node(value);
+    if (!this.head) {
+      this.head = node;
+      return this;
+    }
+    let currentNode = this.head;
+
+    
+
+    while (currentNode.pointer) {
+      currentNode = currentNode.pointer;
+    }
+    currentNode.pointer = node;
+    
+    return this;
+  }
+
+  insertBefore(value, newVal){
+    const node = new Node(newVal);
+    if (!this.head) {
+      this.head = node;
+      return this;
+    }
+    let currentNode = this.head;
+    if(currentNode.value == value){
+      node.pointer = currentNode.pointer;
+      this.head = node;
+      return this;
+    }
+
+    while (currentNode.pointer) {
+      if(currentNode.pointer == null){
+        return undefined;
+      }
+      if(currentNode.pointer.value == value){
+        node.pointer = currentNode.pointer;
+        currentNode.pointer = node;
+        return this;
+      }
+      currentNode = currentNode.pointer;
+    }
+    return this; 
+  }
+
+  insertAfter(value, newVal){
+    const node = new Node(newVal);
+    if (!this.head) {
+      this.head = node;
+      return this;
+    }
+    let currentNode = this.head;
+
+    while (currentNode.value != value) {
+      if(currentNode.pointer == null){
+        return undefined;
+      }
+      currentNode = currentNode.pointer;
+    }
+    node.pointer = currentNode.pointer;
+    currentNode.pointer = node;
+    return this;
+    // console.log('after',node);
+  }
 }
 
 module.exports = LinkedList;
-// const ll = new LinkedList();
-// // ll.insert();
-// ll.insert(2);
-// // ll.insert(3);
-// ll.toString();
-// // ll.includes();
+const ll = new LinkedList();
+ll.insert(1);
+ll.insert(2);
+ll.insert(3);
+ll.insertBefore(1,99);
+ll.insertAfter(55,88);
+console.log(ll.toString());
+

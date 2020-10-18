@@ -20,4 +20,8 @@ Define a method called toString (or __str__ in Python) which takes in no argumen
 ## API
 insert(value) => Insert value into Linked List.
 include(value) => Check if the value is in the Linked List.
-toString() => Representing all the values in the Linked List,
+toString() => Representing all the values in the Linked List.
+append(value) => Adds a new node with the given value to the end of the list.
+insertBefore(value, newVal) => Add a new node with the given newValue immediately before the first value node.
+insertAfter(value, newVal) => Add a new node with the given newValue immediately after the first value node
+
