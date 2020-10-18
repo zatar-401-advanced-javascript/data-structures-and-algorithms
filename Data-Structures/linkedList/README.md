@@ -18,12 +18,12 @@ Define a method called toString (or __str__ in Python) which takes in no argumen
 - Create toString method which takes in no arguments and returns a string representing all the values in the Linked List, it will take the value of the node and push it into array then add it to our message, until we reach to finall node and return the message formatted as "{ a } -> { b } -> { c } -> NULL"
 
 ## API
-insert(value) => Insert value into Linked List.
-include(value) => Check if the value is in the Linked List.
-toString() => Representing all the values in the Linked List.
-append(value) => Adds a new node with the given value to the end of the list.
-insertBefore(value, newVal) => Add a new node with the given newValue immediately before the first value node.
-insertAfter(value, newVal) => Add a new node with the given newValue immediately after the first value node
+* insert(value) => Insert value into Linked List.
+* include(value) => Check if the value is in the Linked List.
+* toString() => Representing all the values in the Linked List.
+* append(value) => Adds a new node with the given value to the end of the list.
+* insertBefore(value, newVal) => Add a new node with the given newValue immediately before the first value node.
+* insertAfter(value, newVal) => Add a new node with the given newValue immediately after the first value node
 
 ## Solution
 ![whiteboard](https://raw.githubusercontent.com/zatar-401-advanced-javascript/data-structures-and-algorithms/main/assets/linkedList.png)
