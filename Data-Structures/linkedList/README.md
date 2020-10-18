@@ -26,4 +26,4 @@ insertBefore(value, newVal) => Add a new node with the given newValue immediatel
 insertAfter(value, newVal) => Add a new node with the given newValue immediately after the first value node
 
 ## Solution
-![whiteboard](../../assets/linedList.png)
+![whiteboard](https://raw.githubusercontent.com/zatar-401-advanced-javascript/data-structures-and-algorithms/main/assets/linkedList.png)
