@@ -23,10 +23,10 @@ class LinkedList {
       this.head = node;
       return this;
     }
-
-    let currentNode = this.head;
-    node.pointer = currentNode.pointer;
-    currentNode.pointer = node;
+    let oldHead = new Node(this.head.value);
+    oldHead.pointer = this.head.pointer;
+    node.pointer = oldHead;
+    this.head = node;
     
     return this;
   }
@@ -145,16 +145,17 @@ class LinkedList {
 }
 
 module.exports = LinkedList;
-// const ll = new LinkedList();
-// ll.insert(1);
-// console.log(ll.toString());
-// ll.insert(2);
-// ll.insert(3);
+const ll = new LinkedList();
+ll.insert(1);
+console.log(ll.toString());
+ll.insert(2);
+console.log(ll.toString());
+ll.insert(3);
 // ll.insert(4);
 // ll.append(2);
 // ll.append(3);
 // ll.append(4);
-// console.log(ll.toString());
+console.log(ll.toString());
 // console.log(ll.kthFromEnd(3));
 // ll.insertBefore(1,99);
 // ll.insertAfter(2,99);

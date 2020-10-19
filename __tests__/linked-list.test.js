@@ -16,7 +16,7 @@ describe('Linked List',() =>{
     const ll = new LinkedList();
     ll.insert(1);
     ll.insert(2);
-    expect(ll.head.pointer.value).toEqual(2);
+    expect(ll.head.value).toEqual(2);
   });
   it('insert(value) Can properly insert multiple nodes into the linked list',()=>{
     const ll = new LinkedList();
@@ -24,7 +24,7 @@ describe('Linked List',() =>{
     ll.insert(2);
     ll.insert(4);
     ll.insert(5);
-    expect(ll.head.pointer.pointer.pointer.value).toEqual(2);
+    expect(ll.head.value).toEqual(5);
   });
   it('includes(value) Will return true when finding a value within the linked list that exists',()=>{
     const ll = new LinkedList();
