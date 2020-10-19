@@ -10,26 +10,25 @@ class Node {
 class LinkedList {
   constructor() {
     this.head = null;
+    this.length = 0;
   }
-
+  
   insert(value) {
     if (!value) {
       throw console.log('Invalid value!');
     }
     const node = new Node(value);
+    this.length++;
     if (!this.head) {
       this.head = node;
       return this;
     }
+
     let currentNode = this.head;
-    while (currentNode.pointer) {
-      currentNode = currentNode.pointer;
-    }
-    
+    node.pointer = currentNode.pointer;
     currentNode.pointer = node;
     
     return this;
-    
   }
 
   includes(value) {
@@ -67,6 +66,7 @@ class LinkedList {
 
   append(value){
     const node = new Node(value);
+    this.length++;
 
     if (!this.head) {
       this.head = node;
@@ -79,12 +79,12 @@ class LinkedList {
     }
 
     currentNode.pointer = node;
-    console.log('--------------');
     return this;
   }
 
   insertBefore(value, newVal){
     const node = new Node(newVal);
+    this.length++;
     if (!this.head) {
       this.head = node;
       return this;
@@ -112,6 +112,7 @@ class LinkedList {
 
   insertAfter(value, newVal){
     const node = new Node(newVal);
+    this.length++;
     if (!this.head) {
       this.head = node;
       return this;
@@ -127,20 +128,34 @@ class LinkedList {
     node.pointer = currentNode.pointer;
     currentNode.pointer = node;
     return this;
-    // console.log('after',node);
+  }
+  kthFromEnd(k){
+    let currentNode = this.head;
+    let counter = this.length-1;
+
+    if((k<0) || (k>counter)){
+      return 'Exception';
+    } 
+    while(counter != k){
+      counter--;
+      currentNode = currentNode.pointer;
+    }
+    return currentNode.value;
   }
 }
 
 module.exports = LinkedList;
-const ll = new LinkedList();
-ll.insert(1);
-ll.append(2);
-ll.append(3);
-ll.append(4);
+// const ll = new LinkedList();
+// ll.insert(1);
+// console.log(ll.toString());
+// ll.insert(2);
+// ll.insert(3);
+// ll.insert(4);
+// ll.append(2);
+// ll.append(3);
 // ll.append(4);
-// ll.append(6);
-// ll.append(7);
+// console.log(ll.toString());
+// console.log(ll.kthFromEnd(3));
 // ll.insertBefore(1,99);
-ll.insertAfter(2,99);
-console.log(ll.toString());
+// ll.insertAfter(2,99);
 
