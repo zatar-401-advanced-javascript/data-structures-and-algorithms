@@ -4,29 +4,41 @@ const stacks = new importStacks.stack();
 
 class PseudoQueue{
   constructor(){
-    this.stack1 = new importStacks.stack();
-    this.stack2 = new importStacks.stack();
+    this.stack = new importStacks.stack();
+    this.backup = new importStacks.stack();
   }
 
   enqueue(value){
-    this.stack1.push(value);
-    this.stack2.push(value);
+    this.stack.push(value);
+    // this.stack2.push(value);
     return this;
   }
   dequeue(){
-    if(this.stack1.top == null || this.stack2.top == null){
-      return 'Empty stack';
+    // if(this.stack1.top == null || this.stack2.top == null){
+    //   return 'Empty stack';
+    // }
+    console.log(this.stack);
+    let currentNode = this.stack.top;
+    while(currentNode != null){
+      this.backup.push(currentNode.value);
+      currentNode = currentNode.pointer;
     }
+    const popedValue = this.backup.pop();
+    console.log(this.backup);
 
-    const popedValue1 = this.stack1.value;
-    this.stack1.pop();
-    const popedValue2 = this.stack2.value;
-    this.stack2.pop();
-    this.stack1.top = this.stack1.top.pointer;
-    this.stack2.top = this.stack2.top.pointer;
-    return {popedValue1,popedValue2};
+    // this.stack = this.backup;
+    return popedValue;
+
   }
 
 }
+
+const queue = new PseudoQueue();
+
+queue.enqueue(1);
+queue.enqueue(2);
+queue.enqueue(3);
+queue.dequeue();
+queue.dequeue();
 
 module.exports = PseudoQueue;
