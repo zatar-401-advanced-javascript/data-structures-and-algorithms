@@ -23,29 +23,45 @@ class AnimalShelter {
     if ((pref != 'cat') && (pref != 'dog')) {
       return null;
     }
-    if(pref == 'cat'){
+
+    let dequeuedAnimal;
+
+    if ((pref == 'cat') || (pref == 'dog')) {
       for (let index = 0; index < this.shelter.length; index++) {
-        if(this.shelter[index].type == cat){
-          
-          return this.shelter[index]
+        if (this.shelter[index].type == pref) {
+          dequeuedAnimal = this.shelter[index];
+          this.shelter[index] = 'removed';
+          index += this.shelter.length;
         }
       }
     }
-    if(pref == 'dog'){
-      while(this.shelter)
-    }
+    const newArr = [];
+    this.shelter.forEach((element)=>{
+      if(element != 'removed'){
+        newArr.push(element);
+      }
+    });
+    this.shelter = newArr;
+    return dequeuedAnimal;
   }
 }
 
-const a1 = new Animal('test', 'cat');
-const a2 = new Animal('test', 'dog');
-const a3 = new Animal('test', 'test');
+module.exports = {Animal,AnimalShelter};
 
-const shelter = new AnimalShelter();
+// const a1 = new Animal('test', 'cat');
+// const a11 = new Animal('test', 'cat');
+// const a2 = new Animal('test', 'dog');
+// const a22 = new Animal('test', 'dog');
+// const a3 = new Animal('test', 'test');
 
-shelter.enqueue(a1);
-shelter.enqueue(a2);
-shelter.enqueue(a3);
-shelter.dequeue('dog');
+// const shelter = new AnimalShelter();
 
-console.log(shelter);
+// shelter.enqueue(a1);
+// shelter.enqueue(a2);
+// shelter.enqueue(a11);
+// shelter.enqueue(a22);
+// shelter.enqueue(a3);
+// console.log(shelter);
+// shelter.dequeue('dog');
+// console.log(shelter.dequeue('dog'));
+// console.log(shelter);
