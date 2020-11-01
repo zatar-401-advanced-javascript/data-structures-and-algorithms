@@ -57,6 +57,20 @@ class BinaryTree {
     _walk(this.root);
     return results;
   }
+  findMaximumValue(){
+    if (!this.root) {
+      throw 'Empty tree';
+    }
+    const arr = this.preOrder();
+    let max = this.root.value;
+
+    for (let index = 0; index < arr.length; index++) {
+      if(arr[index]>max){
+        max = arr[index];
+      }
+    }
+    return max;
+  }
 }
 
 class BinarySearchTree {
@@ -117,7 +131,7 @@ class BinarySearchTree {
 
 module.exports = {tree:BinaryTree, search:BinarySearchTree, node:Node};
 // const test1 = new Node(5);
-// const test2 = new Node(3);
+// const test2 = new Node(99);
 // const test3 = new Node(6);
 // const test4 = new Node(2);
 
@@ -125,7 +139,7 @@ module.exports = {tree:BinaryTree, search:BinarySearchTree, node:Node};
 // test1.right = test3;
 // test2.left = test4;
 
-// const test = new BinarySearchTree();
+// const test = new BinaryTree(test1);
 // test.add(1);
 // test.add(4);a
-// console.log(test.contains(1));
+// console.log(test.findMaximumValue());
