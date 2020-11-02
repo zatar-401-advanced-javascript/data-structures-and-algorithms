@@ -16,6 +16,7 @@ recursively as a collection of nodes (starting at a root node), where each node 
 * preOrder, inOrder and postOrder used recursive function so I can follow the order i want and pushing into the array.
 * add and contains it will check if the value equal root value if not to check lower and higher and keep checking until it find value for contains or it reach null and assign it for add.
 * findMaximumValue first it call preOrder and save it in variable then loop throught the array and find max number by comparing and saving after that it return the max.
+* breadthFirst will push value of root,left and right then save the left and right in queue then run function again with queue
 
 ## API
 preOrder() => return array ordered in [ROOT - LEFT - RIGHT]
@@ -26,9 +27,12 @@ postOrder() => return array ordered in [LEFT - RIGHT - ROOT]
 
 add(value) => adds a new node with that value in the correct location in the binary search tree.
 
-contains(value) => returns a boolean indicating whether or not the value is in the tree
+contains(value) => returns a boolean indicating whether or not the value is in the tree.
 
-findMaximumValue() => return max value in tree
+findMaximumValue() => return max value in tree.
+
+breadthFirst() => return breadth first traversal.
 
 ## Soluition 
 * **findMaximumValue**: ![ex](../../assets/findMaximumValue.png)
+* **breadthFirst**: ![ex](../../assets/breadthFirst.png)
