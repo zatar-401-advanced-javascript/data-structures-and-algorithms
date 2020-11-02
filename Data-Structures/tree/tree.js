@@ -115,8 +115,8 @@ class BinarySearchTree {
   add(value) {
     const node = new Node(value);
     if (!this.root) {
-      console.log('test1');
       this.root = node;
+      return this;
     }
     let currentNode = this.root;
 
@@ -183,9 +183,10 @@ module.exports = { tree: BinaryTree, search: BinarySearchTree, node: Node };
 // test5.right = test8;
 // test6.left = test9;
 
-// const test = new BinaryTree(test1);
+// const test = new BinarySearchTree();
 // const test999 = test.breadthFirst();
 // console.log(test999);
 // test.add(1);
-// test.add(4);a
+// test.add(4);
+// console.log(test);
 // console.log(test.findMaximumValue());
