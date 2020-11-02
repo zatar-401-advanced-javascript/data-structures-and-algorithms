@@ -34,7 +34,7 @@ describe('Binary Tree', () => {
     one.right = three;
     two.left = four;
     two.right = five;
-
+    
     tree = new treeImport.tree(one);
   });
   it('Can successfully return a collection from a preorder traversal', () => {
@@ -61,5 +61,14 @@ describe('Binary Tree', () => {
   it('findMaximumValue method return max value of tree', () => {
 
     expect(tree.findMaximumValue()).toEqual(5);
+  });
+  it('breadthFirst method throw error if tree is empty', () => {
+    const tree = new treeImport.tree();
+    expect(() => {
+      tree.findMaximumValue();
+    }).toThrow();
+  });
+  it('breadthFirst method return max value of tree', () => {
+    expect(tree.breadthFirst()).toEqual([1,2,3,4,5]);
   });
 });
