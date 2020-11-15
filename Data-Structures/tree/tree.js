@@ -86,11 +86,11 @@ class BinaryTree {
 
     results.push(this.root.value);
     const _walk = (node) => {
-      if(node == undefined){
+      if (node == undefined) {
         // console.log(results);
         return results;
       }
-      counter++;      
+      counter++;
       if (node.left) {
         results.push(node.left.value);
         saved.push(node.left);
@@ -110,6 +110,33 @@ class BinaryTree {
 class BinarySearchTree {
   constructor(root = null) {
     this.root = root;
+  }
+
+  beforeMax() {
+
+    let max = this.root.value;
+    let beforeMax = this.root.left ? this.root.left.value : this.root.value;
+
+    const _walk = (node) => {
+      if (node.value > max) {
+        beforeMax = max;
+        max = node.value;
+      }
+
+      if((node.value>beforeMax) && (node.value<max)){
+        beforeMax = node.value;
+      }
+
+      if(node.right) _walk(node.right);
+      if(node.left) _walk(node.left);
+    };
+
+    if (!this.root.left && !this.root.right) {
+      throw 'err';
+    } 
+    _walk(this.root);
+
+    return beforeMax;
   }
 
   add(value) {
@@ -183,7 +210,16 @@ module.exports = { tree: BinaryTree, search: BinarySearchTree, node: Node };
 // test5.right = test8;
 // test6.left = test9;
 
-// const test = new BinarySearchTree();
+const test = new BinarySearchTree();
+
+test.add(10);
+test.add(1);
+test.add(2);
+test.add(-1);
+
+console.log(test);
+
+console.log(test.beforeMax());
 // const test999 = test.breadthFirst();
 // console.log(test999);
 // test.add(1);
