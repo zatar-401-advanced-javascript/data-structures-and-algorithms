@@ -4,14 +4,14 @@ console.log(MergeSort([8,4,23,30]));
 
 function MergeSort(arr) {
 
-  let len = arr.length;
+  let n = arr.length;
   let mid,left,right;
 
-  if (len < 2) {
+  if (n < 2) {
     return arr;
   }
 
-  mid = Math.floor(len / 2);
+  mid = Math.floor(n / 2);
 
   left = arr.slice(0, mid);
   right = arr.slice(mid);
