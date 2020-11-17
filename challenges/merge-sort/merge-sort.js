@@ -37,6 +37,8 @@ function merge(left, right) {
   return result.concat(left.slice(i)).concat(right.slice(j));
 }
 
+module.exports = MergeSort;
+
 // Didn't work on all cases :(
 
 // function mergeSort(arr) {
