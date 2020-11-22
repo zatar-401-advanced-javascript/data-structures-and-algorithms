@@ -141,17 +141,54 @@ class LinkedList {
       currentNode = currentNode.pointer;
     }
     return currentNode.value;
+    // if((k<0) || (k>counter)){
+    //   return 'Exception';
+    // } 
+    // let p = this.head;
+    // let f = this.head;
+    // let n = 1;
+    // while(n<=(k-1)){
+    //   f=f.pointer;
+    //   n+=1;
+    // }
+    // while(f.pointer!=null){
+    //   p=p.pointer;
+    //   f=f.pointer;
+    // }
+    // return p.value;
+  }
+// [1,2,3,4]
+// nextNode =  null
+// prevNode = {4,{3,[{2,[1]}]}}
+// ll = null
+  reverse(){
+    let prevNode = null;
+
+    while(this.head == null){
+      let nextNode = this.head.pointer;
+      this.head.pointer = prevNode;
+      prevNode = this.head;
+      this.head = nextNode;
+    }
+    this.head = prevNode;
+    // console.log(prevNode);
   }
 }
 
 module.exports = LinkedList;
-// const ll = new LinkedList();
-// ll.insert(1);
+const ll = new LinkedList();
+ll.append(1);
 // console.log(ll.toString());
-// ll.insert(2);
+ll.append(2);
 // console.log(ll.toString());
-// ll.insert(3);
-// ll.insert(4);
+ll.append(3);
+ll.append(4);
+ll.append(5);
+ll.append(6);
+ll.append(7);
+console.log(ll.kthFromEnd(7));
+// ll.reverse();
+// console.log(ll.head);
 // ll.append(2);
 // ll.append(3);
 // ll.append(4);
