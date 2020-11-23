@@ -12,7 +12,7 @@ class LinkedList {
     this.head = null;
     this.length = 0;
   }
-  
+
   insert(value) {
     if (!value) {
       throw console.log('Invalid value!');
@@ -27,7 +27,7 @@ class LinkedList {
     oldHead.pointer = this.head.pointer;
     node.pointer = oldHead;
     this.head = node;
-    
+
     return this;
   }
 
@@ -48,7 +48,7 @@ class LinkedList {
   }
 
   toString() {
-    
+
     let currentNode = this.head;
     let allValues = [];
     let msg = '';
@@ -64,7 +64,7 @@ class LinkedList {
     return msg;
   }
 
-  append(value){
+  append(value) {
     const node = new Node(value);
     this.length++;
 
@@ -73,7 +73,7 @@ class LinkedList {
       return this;
     }
     let currentNode = this.head;
-    
+
     while (currentNode.pointer) {
       currentNode = currentNode.pointer;
     }
@@ -82,7 +82,7 @@ class LinkedList {
     return this;
   }
 
-  insertBefore(value, newVal){
+  insertBefore(value, newVal) {
     const node = new Node(newVal);
     this.length++;
     if (!this.head) {
@@ -90,27 +90,27 @@ class LinkedList {
       return this;
     }
     let currentNode = this.head;
-    if(currentNode.value == value){
+    if (currentNode.value == value) {
       node.pointer = currentNode.pointer;
       this.head = node;
       return this;
     }
 
     while (currentNode.pointer) {
-      if(currentNode.pointer == null){
+      if (currentNode.pointer == null) {
         return undefined;
       }
-      if(currentNode.pointer.value == value){
+      if (currentNode.pointer.value == value) {
         node.pointer = currentNode.pointer;
         currentNode.pointer = node;
         return this;
       }
       currentNode = currentNode.pointer;
     }
-    return this; 
+    return this;
   }
 
-  insertAfter(value, newVal){
+  insertAfter(value, newVal) {
     const node = new Node(newVal);
     this.length++;
     if (!this.head) {
@@ -120,7 +120,7 @@ class LinkedList {
     let currentNode = this.head;
 
     while (currentNode.value != value) {
-      if(currentNode.pointer == null){
+      if (currentNode.pointer == null) {
         return undefined;
       }
       currentNode = currentNode.pointer;
@@ -129,14 +129,14 @@ class LinkedList {
     currentNode.pointer = node;
     return this;
   }
-  kthFromEnd(k){
+  kthFromEnd(k) {
     let currentNode = this.head;
-    let counter = this.length-1;
+    let counter = this.length - 1;
 
-    if((k<0) || (k>counter)){
+    if ((k < 0) || (k > counter)) {
       return 'Exception';
-    } 
-    while(counter != k){
+    }
+    while (counter != k) {
       counter--;
       currentNode = currentNode.pointer;
     }
@@ -157,14 +157,14 @@ class LinkedList {
     // }
     // return p.value;
   }
-// [1,2,3,4]
-// nextNode =  null
-// prevNode = {4,{3,[{2,[1]}]}}
-// ll = null
-  reverse(){
+  // [1,2,3,4]
+  // nextNode =  null
+  // prevNode = {4,{3,[{2,[1]}]}}
+  // ll = null
+  reverse() {
     let prevNode = null;
 
-    while(this.head == null){
+    while (this.head == null) {
       let nextNode = this.head.pointer;
       this.head.pointer = prevNode;
       prevNode = this.head;
@@ -176,17 +176,17 @@ class LinkedList {
 }
 
 module.exports = LinkedList;
-const ll = new LinkedList();
-ll.append(1);
+// const ll = new LinkedList();
+// ll.append(1);
 // console.log(ll.toString());
-ll.append(2);
+// ll.append(2);
 // console.log(ll.toString());
-ll.append(3);
-ll.append(4);
-ll.append(5);
-ll.append(6);
-ll.append(7);
-console.log(ll.kthFromEnd(7));
+// ll.append(3);
+// ll.append(4);
+// ll.append(5);
+// ll.append(6);
+// ll.append(7);
+// console.log(ll.kthFromEnd(7));
 // ll.reverse();
 // console.log(ll.head);
 // ll.append(2);

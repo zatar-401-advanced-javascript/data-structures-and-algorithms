@@ -1,6 +1,6 @@
 'use strict';
 const importStacks = require('../../Data-Structures/stacksAndQueues/stacks-and-queues');
-const stacks = new importStacks.stack();
+// const stacks = new importStacks.stack();
 
 class PseudoQueue{
   constructor(){
@@ -40,12 +40,12 @@ class PseudoQueue{
 
 }
 
-const queue = new PseudoQueue();
+// const queue = new PseudoQueue();
 
-queue.enqueue(1);
-queue.enqueue(2);
-queue.enqueue(3);
-queue.dequeue();
+// queue.enqueue(1);
+// queue.enqueue(2);
+// queue.enqueue(3);
+// queue.dequeue();
 // queue.dequeue();
 
 module.exports = PseudoQueue;
