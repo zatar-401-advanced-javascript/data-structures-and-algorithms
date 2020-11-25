@@ -9,6 +9,15 @@ const hashmapB = new HashMap(10);
 hashmapB.add('name', 'ma');
 hashmapB.add('one', 'tt');
 
+const leftJoin = require('../challenges/leftJoin/left-join');
+
 describe('Left Join', () => {
-  
+  it('Correct output',()=>{
+    let output = leftJoin(hashmapA.storage,hashmapB.storage);
+    expect(output).toEqual([
+      [ 'test', '99', null ],
+      [ 'name', 'abd', 'ma' ],
+      [ 'one', 'thing', 'tt' ],
+    ]);
+  });
 });
