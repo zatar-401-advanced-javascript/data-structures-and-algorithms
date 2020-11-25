@@ -23,9 +23,11 @@ class LinkedList {
       this.head = node;
       return this;
     }
-    let oldHead = new Node(this.head.value);
-    oldHead.pointer = this.head.pointer;
-    node.pointer = oldHead;
+    // let oldHead = new Node(this.head.value);
+    // oldHead.pointer = this.head.pointer;
+    // node.pointer = oldHead;
+    // this.head = node;
+    node.pointer = this.head;
     this.head = node;
 
     return this;
@@ -50,17 +52,17 @@ class LinkedList {
   toString() {
 
     let currentNode = this.head;
-    let allValues = [];
+    // let allValues = [];
     let msg = '';
     if (!currentNode) {
       throw console.log('No values in the linked list :(');
     }
     while (currentNode) {
-      allValues.push(currentNode.value);
-      msg = msg.concat(`{ ${currentNode.value} } -> `);
+      // allValues.push(currentNode.value);
+      msg = msg + `{ ${currentNode.value} } -> `;
       currentNode = currentNode.pointer;
     }
-    msg = msg.concat(`NULL`);
+    msg = msg + `NULL`;
     return msg;
   }
 
@@ -119,14 +121,17 @@ class LinkedList {
     }
     let currentNode = this.head;
 
-    while (currentNode.value != value) {
-      if (currentNode.pointer == null) {
-        return undefined;
+    while (currentNode) {
+      // if (currentNode.pointer == null) {
+      //   return undefined;
+      // }
+      if (currentNode.value == value) {
+        node.pointer = currentNode.pointer;
+        currentNode.pointer = node;
+        return this;
       }
       currentNode = currentNode.pointer;
     }
-    node.pointer = currentNode.pointer;
-    currentNode.pointer = node;
     return this;
   }
   kthFromEnd(k) {
