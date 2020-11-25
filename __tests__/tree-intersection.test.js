@@ -25,5 +25,4 @@ describe('Tree Intersection', () => {
   it('Get common values', () => {
     expect(treeIntersection(treeA,treeB)).toEqual([2,4]);
   });
-
 });
