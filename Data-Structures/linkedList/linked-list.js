@@ -202,3 +202,43 @@ module.exports = LinkedList;
 // ll.insertBefore(1,99);
 // ll.insertAfter(2,99);
 
+const llA = new LinkedList();
+const llB = new LinkedList();
+llA.append(1);
+llA.append(3);
+llA.append(7);
+llB.append(2);
+llB.append(3);
+llB.append(5);
+llB.append(9);
+
+// 1-2-3-3-5-7-9
+
+function mergeSort(llA, llB) {
+
+  let newLL = new LinkedList();
+  let currentA = llA.head;
+  let currentB = llB.head;
+
+  while (currentA || currentB) {
+    if (!currentA) {
+      newLL.append(currentB.value);
+      currentB = currentB.pointer;
+    } else if (!currentB) {
+      newLL.append(currentA.value);
+      currentA = currentA.pointer;
+    } else {
+      if (currentA.value >= currentB.value) {
+        newLL.append(currentB.value);
+        currentB = currentB.pointer;
+      } else if (currentB.value >=   currentA.value) {
+        newLL.append(currentA.value);
+        currentA = currentA.pointer;
+      }
+    }
+  }
+  return newLL;
+
+}
+const result = mergeSort(llA,llB);
+console.log(result.toString());
