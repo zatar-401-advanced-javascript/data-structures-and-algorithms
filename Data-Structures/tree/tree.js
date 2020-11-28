@@ -191,33 +191,33 @@ class BinarySearchTree {
 }
 
 module.exports = { tree: BinaryTree, search: BinarySearchTree, node: Node };
-// const test1 = new Node(2);
-// const test2 = new Node(7);
-// const test3 = new Node(5);
-// const test4 = new Node(2);
-// const test5 = new Node(6);
-// const test6 = new Node(9);
-// const test7 = new Node(5);
-// const test8 = new Node(11);
-// const test9 = new Node(4);
+const test1 = new Node(2);
+const test2 = new Node(7);
+const test3 = new Node(5);
+const test4 = new Node(2);
+const test5 = new Node(6);
+const test6 = new Node(9);
+const test7 = new Node(5);
+const test8 = new Node(11);
+const test9 = new Node(4);
 
-// test1.left = test2;
-// test1.right = test3;
-// test2.left = test4;
-// test2.right = test5;
-// test3.right = test6;
-// test5.left = test7;
-// test5.right = test8;
-// test6.left = test9;
+test1.left = test2;
+test1.right = test3;
+test2.left = test4;
+test2.right = test5;
+test3.right = test6;
+test5.left = test7;
+test5.right = test8;
+test6.left = test9;
 
-const test = new BinarySearchTree();
+const test = new BinarySearchTree(test1);
+// test.add(test1);
 
-test.add(10);
-test.add(1);
-test.add(2);
-test.add(-1);
+// test.add(1);
+// test.add(2);
+// test.add(-1);
 
-console.log(test);
+// console.log(test);
 
 console.log(test.beforeMax());
 // const test999 = test.breadthFirst();
